@@ -14,11 +14,11 @@ searchCity.addEventListener("click", function (e) {
 });
 
 const getWeatherData = () => {
-  const APIAdress = `http://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=51e4d3e3937627b75b6c11cd07579773&units=metric`;
+  const APIAdress = `https://api.openweathermap.org/data/2.5/weather?q=${cityName.value}&appid=51e4d3e3937627b75b6c11cd07579773&units=metric`;
   fetch(APIAdress)
     .then((res) => res.json())
     .then((data) => {
-      weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+      weatherIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
       cityNameShow.innerText = data.name;
       tempShow.innerText = data.main.temp;
       lead.innerText = data.weather[0].main;
